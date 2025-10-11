@@ -1,0 +1,33 @@
+@model IEnumerable<WebApplication1.Models.Student>
+
+<h2>Student List</h2>
+
+<p>
+    <span class="text-muted">@Model.Count() record(s)</span>
+</p>
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Date of Birth</th>
+        <th>Department</th>
+        <th>Marks</th>
+        
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var student in Model)
+    {
+        <tr>
+            <td>@student.Id</td>
+            <td>@student.Name</td>
+            <td>@student.DateOfBirth.ToShortDateString()</td>
+            <td>@student.Department</td>
+            <td>@student.Marks</td>
+            
+        </tr>
+    }
+    </tbody>
+</table>

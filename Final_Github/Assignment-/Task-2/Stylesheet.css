@@ -1,0 +1,21 @@
+.navigation {
+  text-align: center;    
+  margin: 15px 0;
+}
+
+.navigation a {
+  text-decoration: none;
+  margin: 0 15px;      
+  font-weight: bold;
+  color: #333;
+}
+.content {
+  text-align: center;   
+}
+.content img {
+  width: 250px;
+  height: 250px;
+  border: 2px solid black;   
+  border-radius: 8px;       
+  margin: 10px;             
+}

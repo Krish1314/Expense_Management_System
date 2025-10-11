@@ -1,0 +1,64 @@
+@model IEnumerable<WebApplication2.Models.Student>
+
+<h2>Students List</h2>
+<form method="get" asp-action="Index">
+    <input type="text" name="search" value="@ViewData["CurrentFilter"]" placeholder="Search by name or course" />
+    <button type="submit">Search</button>
+    <a asp-action="Index">Clear</a>
+    <a asp-action="Create" style="margin-left:16px;">Add New Student</a>
+    <input type="hidden" name="sortOrder" value="@ViewData["CurrentSort"]" />
+    <input type="hidden" name="pageSize" value="@ViewData["PageSize"]" />
+    <input type="hidden" name="page" value="1" />
+    </form>
+<table border="1" cellpadding="8">
+    <tr>
+        <th>ID</th>
+        <th>
+            <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSort"]" asp-route-search="@ViewData["CurrentFilter"]">Name</a>
+        </th>
+        <th>
+            <a asp-action="Index" asp-route-sortOrder="@ViewData["AgeSort"]" asp-route-search="@ViewData["CurrentFilter"]">Age</a>
+        </th>
+        <th>Course</th>
+        <th>
+            <a asp-action="Index" asp-route-sortOrder="@ViewData["MarksSort"]" asp-route-search="@ViewData["CurrentFilter"]">Marks</a>
+        </th>
+        <th>Date of Birth</th>
+        <th>Actions</th>
+    </tr>
+    @foreach (var s in Model)
+    {
+        <tr>
+            <td>@s.Id</td>
+            <td>@s.Name</td>
+            <td>@s.Age</td>
+            <td>@s.Course</td>
+            <td>@s.Marks</td>
+            <td>@s.DateOfBirth.ToString("yyyy-MM-dd")</td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@s.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@s.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@s.Id">Delete</a>
+            </td>
+        </tr>
+    }
+    </table>
+
+@{
+    var page = (int)(ViewData["Page"] ?? 1);
+    var totalPages = (int)(ViewData["TotalPages"] ?? 1);
+}
+
+<div style="margin-top:12px;">
+    Page @page of @totalPages
+    <div>
+        @if (page > 1)
+        {
+            <a asp-action="Index" asp-route-page="@(page-1)" asp-route-sortOrder="@ViewData["CurrentSort"]" asp-route-search="@ViewData["CurrentFilter"]">Prev</a>
+        }
+        @if (page < totalPages)
+        {
+            <a asp-action="Index" asp-route-page="@(page+1)" asp-route-sortOrder="@ViewData["CurrentSort"]" asp-route-search="@ViewData["CurrentFilter"]" style="margin-left:8px;">Next</a>
+        }
+    </div>
+</div>

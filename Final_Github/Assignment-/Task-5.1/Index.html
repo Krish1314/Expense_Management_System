@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>EduConnect | Bootstrap Buttons</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+
+  <!-- Bootstrap 3 CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+  <!-- Bootstrap JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      padding-top: 70px;
+    }
+    .btn-demo {
+      margin: 10px;
+    }
+    .footer {
+      background-color: #f5f5f5;
+      padding: 20px;
+      margin-top: 50px;
+      text-align: center;
+    }
+    .footer a {
+      margin: 0 10px;
+      color: #333;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/Task-4/Index.html">EduConnect</a>
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse" id="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="/Task-4/Index.html">Back to Home</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="container text-center">
+    <h2>Bootstrap Buttons Showcase</h2>
+    <p>Below are various types of Bootstrap 3 buttons:</p>
+
+    <!-- Standard Buttons -->
+    <div>
+      <button class="btn btn-default btn-demo">Default</button>
+      <button class="btn btn-primary btn-demo">Primary</button>
+      <button class="btn btn-success btn-demo">Success</button>
+      <button class="btn btn-info btn-demo">Info</button>
+      <button class="btn btn-warning btn-demo">Warning</button>
+      <button class="btn btn-danger btn-demo">Danger</button>
+      <button class="btn btn-link btn-demo">Link</button>
+    </div>
+
+    <hr>
+
+    <!-- Button Sizes -->
+    <h3>Button Sizes</h3>
+    <button class="btn btn-primary btn-lg btn-demo">Large Button</button>
+    <button class="btn btn-primary btn-demo">Default Button</button>
+    <button class="btn btn-primary btn-sm btn-demo">Small Button</button>
+    <button class="btn btn-primary btn-xs btn-demo">Extra Small Button</button>
+
+    <hr>
+
+    <!-- Block Level Button -->
+    <h3>Block Level Button</h3>
+    <button class="btn btn-success btn-block btn-demo">Full Width Button</button>
+
+    <hr>
+
+    <!-- Disabled Buttons -->
+    <h3>Disabled Buttons</h3>
+    <button class="btn btn-danger btn-demo" disabled>Disabled Button</button>
+    <a href="#" class="btn btn-info btn-demo disabled" role="button">Disabled Link</a>
+
+    <hr>
+
+    <!-- Button Groups -->
+    <h3>Button Groups</h3>
+    <div class="btn-group">
+      <button class="btn btn-default">Left</button>
+      <button class="btn btn-default">Middle</button>
+      <button class="btn btn-default">Right</button>
+    </div>
+
+    <hr>
+
+    <!-- Justified Button Group -->
+    <h3>Justified Button Group</h3>
+    <div class="btn-group btn-group-justified">
+      <a href="#" class="btn btn-primary">Left</a>
+      <a href="#" class="btn btn-primary">Center</a>
+      <a href="#" class="btn btn-primary">Right</a>
+    </div>
+
+    <hr>
+
+    <!-- Dropdown Button -->
+    <h3>Dropdown Button</h3>
+    <div class="btn-group">
+      <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown">
+        Dropdown <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu">
+        <li><a href="#">Action</a></li>
+        <li><a href="#">Another Action</a></li>
+        <li><a href="#">Something Else</a></li>
+        <li class="divider"></li>
+        <li><a href="#">Separated Link</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p>&copy; 2025 EduConnect</p>
+    <a href="/Task-4/Index.html">Back to Assignment 4</a>
+  </div>
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Form Validation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    input, textarea {
+      width: 300px;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .error {
+      color: red;
+      font-size: 14px;
+    }
+    .success {
+      border-color: green;
+    }
+    .invalid {
+      border-color: red;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Form Validation Example</h2>
+  <form id="myForm">
+    
+    <!-- Text -->
+    <div class="form-group">
+      <label for="textField">Text (4–30 chars)</label>
+      <input type="text" id="textField" name="textField" required>
+      <div class="error" id="textError"></div>
+    </div>
+
+    <!-- Number -->
+    <div class="form-group">
+      <label for="numberField">Number (20–30)</label>
+      <input type="number" id="numberField" name="numberField" required>
+      <div class="error" id="numberError"></div>
+    </div>
+
+    <!-- Date -->
+    <div class="form-group">
+      <label for="dateField">Date (must be before today)</label>
+      <input type="date" id="dateField" name="dateField" required>
+      <div class="error" id="dateError"></div>
+    </div>
+
+    <!-- Textarea -->
+    <div class="form-group">
+      <label for="textareaField">Text Area (max 100 chars)</label>
+      <textarea id="textareaField" name="textareaField" rows="4" required></textarea>
+      <div class="error" id="textareaError"></div>
+    </div>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    const form = document.getElementById("myForm");
+
+    const textField = document.getElementById("textField");
+    const numberField = document.getElementById("numberField");
+    const dateField = document.getElementById("dateField");
+    const textareaField = document.getElementById("textareaField");
+
+    const textError = document.getElementById("textError");
+    const numberError = document.getElementById("numberError");
+    const dateError = document.getElementById("dateError");
+    const textareaError = document.getElementById("textareaError");
+
+    function validateText() {
+      if (textField.value.trim().length < 4 || textField.value.trim().length > 30) {
+        textError.textContent = "Text must be between 4 and 30 characters.";
+        textField.classList.add("invalid");
+        return false;
+      }
+      textError.textContent = "";
+      textField.classList.remove("invalid");
+      textField.classList.add("success");
+      return true;
+    }
+
+    function validateNumber() {
+        const num = parseInt(numberField.value);
+        if (isNaN(num) || num < 15 || num > 30) {
+        numberError.textContent = "Number must be between 15 and 30.";
+        numberField.classList.add("invalid");
+        return false;
+    }
+  numberError.textContent = "";
+  numberField.classList.remove("invalid");
+  numberField.classList.add("success");
+  return true;
+}
+
+
+    function validateDate() {
+      const today = new Date().setHours(0, 0, 0, 0);
+      const inputDate = new Date(dateField.value).setHours(0, 0, 0, 0);
+      if (!dateField.value || inputDate >= today) {
+        dateError.textContent = "Date must be before today.";
+        dateField.classList.add("invalid");
+        return false;
+      }
+      dateError.textContent = "";
+      dateField.classList.remove("invalid");
+      dateField.classList.add("success");
+      return true;
+    }
+
+    function validateTextarea() {
+      if (textareaField.value.trim().length > 100) {
+        textareaError.textContent = "Text area must not exceed 100 characters.";
+        textareaField.classList.add("invalid");
+        return false;
+      }
+      textareaError.textContent = "";
+      textareaField.classList.remove("invalid");
+      textareaField.classList.add("success");
+      return true;
+    }
+
+    function validateForm() {
+      const validText = validateText();
+      const validNumber = validateNumber();
+      const validDate = validateDate();
+      const validTextarea = validateTextarea();
+      return validText && validNumber && validDate && validTextarea;
+    }
+
+    // On submit
+    form.addEventListener("submit", function (e) {
+      if (!validateForm()) {
+        e.preventDefault();
+      }
+    });
+
+    // On input & onchange
+    textField.addEventListener("input", validateText);
+    textField.addEventListener("change", validateText);
+
+    numberField.addEventListener("input", validateNumber);
+    numberField.addEventListener("change", validateNumber);
+
+    dateField.addEventListener("input", validateDate);
+    dateField.addEventListener("change", validateDate);
+
+    textareaField.addEventListener("input", validateTextarea);
+    textareaField.addEventListener("change", validateTextarea);
+
+  </script>
+
+</body>
+</html>

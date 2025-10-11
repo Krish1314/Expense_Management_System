@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fetch Local JSON Data</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+<div class="container my-5">
+  <h2 class="text-center mb-4">Fetch JSON Data Example</h2>
+
+  <!-- Button -->
+  <div class="text-center mb-3">
+    <button id="fetchBtn" class="btn btn-primary">Fetch Data</button>
+  </div>
+
+  <!-- Loader -->
+  <div id="loader" class="text-center my-3" style="display: none;">
+    <div class="spinner-border text-primary" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+    <p class="mt-2">Loading data...</p>
+  </div>
+
+  <!-- Table -->
+  <div class="table-responsive">
+    <table id="dataTable" class="table table-striped table-bordered d-none">
+      <thead class="table-dark">
+        <tr>
+          <th>ID</th>
+          <th>Title</th>
+          <th>Body</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  const fetchBtn = document.getElementById("fetchBtn");
+  const loader = document.getElementById("loader");
+  const dataTable = document.getElementById("dataTable");
+  const tableBody = dataTable.querySelector("tbody");
+
+  fetchBtn.addEventListener("click", async () => {
+    // Show loader & hide table
+    loader.style.display = "block";
+    dataTable.classList.add("d-none");
+    tableBody.innerHTML = ""; 
+
+    try {
+      // Fetch data from your local json-server
+      const response = await fetch("http://localhost:3001/posts");
+      const data = await response.json();
+
+      // Populate table
+      data.forEach(post => {
+        const row = `
+          <tr>
+            <td>${post.id}</td>
+            <td>${post.title}</td>
+            <td>${post.body}</td>
+          </tr>
+        `;
+        tableBody.innerHTML += row;
+      });
+
+      // Hide loader & show table
+      loader.style.display = "none";
+      dataTable.classList.remove("d-none");
+
+    } catch (error) {
+      loader.style.display = "none";
+      alert("Error fetching data!");
+      console.error(error);
+    }
+  });
+</script>
+
+</body>
+</html>
+
+<!-- Note : To access the json server use : npx json-server --watch db.json --port 3000 -->

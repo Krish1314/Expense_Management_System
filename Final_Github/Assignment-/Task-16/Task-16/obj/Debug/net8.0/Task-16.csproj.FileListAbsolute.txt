@@ -1,0 +1,15 @@
+/Users/krishpatel/Assignment/Assignment-/Task-16/Task-16/bin/Debug/net8.0/Task-16
+/Users/krishpatel/Assignment/Assignment-/Task-16/Task-16/bin/Debug/net8.0/Task-16.deps.json
+/Users/krishpatel/Assignment/Assignment-/Task-16/Task-16/bin/Debug/net8.0/Task-16.runtimeconfig.json
+/Users/krishpatel/Assignment/Assignment-/Task-16/Task-16/bin/Debug/net8.0/Task-16.dll
+/Users/krishpatel/Assignment/Assignment-/Task-16/Task-16/bin/Debug/net8.0/Task-16.pdb
+/Users/krishpatel/Assignment/Assignment-/Task-16/Task-16/obj/Debug/net8.0/Task-16.GeneratedMSBuildEditorConfig.editorconfig
+/Users/krishpatel/Assignment/Assignment-/Task-16/Task-16/obj/Debug/net8.0/Task-16.AssemblyInfoInputs.cache
+/Users/krishpatel/Assignment/Assignment-/Task-16/Task-16/obj/Debug/net8.0/Task-16.AssemblyInfo.cs
+/Users/krishpatel/Assignment/Assignment-/Task-16/Task-16/obj/Debug/net8.0/Task-16.csproj.CoreCompileInputs.cache
+/Users/krishpatel/Assignment/Assignment-/Task-16/Task-16/obj/Debug/net8.0/Task-16.dll
+/Users/krishpatel/Assignment/Assignment-/Task-16/Task-16/obj/Debug/net8.0/refint/Task-16.dll
+/Users/krishpatel/Assignment/Assignment-/Task-16/Task-16/obj/Debug/net8.0/Task-16.pdb
+/Users/krishpatel/Assignment/Assignment-/Task-16/Task-16/obj/Debug/net8.0/Task-16.genruntimeconfig.cache
+/Users/krishpatel/Assignment/Assignment-/Task-16/Task-16/obj/Debug/net8.0/ref/Task-16.dll
+/Users/krishpatel/Assignment/Assignment-/Task-16/Task-16/obj/Debug/net8.0/Task-16.sourcelink.json
