@@ -27,7 +27,7 @@ namespace FinanceManagement.Data
             if (!optionsBuilder.IsConfigured)
             {
                 // Fallback provider when DI not used: PostgreSQL
-                optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=finance_db;Username=postgres;Password=yourCookie@1439;");
+                optionsBuilder.UseNpgsql("Host=localhost;Port=5433;Database=finance_db;Username=postgres;Password=xyz;");
             }
         }
     }
