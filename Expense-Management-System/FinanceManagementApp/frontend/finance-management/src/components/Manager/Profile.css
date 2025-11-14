@@ -1,0 +1,202 @@
+ /* 🔹 Main Profile Area */
+  .profile-main {
+    flex: 1;
+    background-color: #f9fafb;
+    padding: 1.5rem 2rem;
+    min-height: 100vh;
+    font-family: "Inter", sans-serif;
+    color: #1f2937;
+    margin-top: 0px;
+  }
+  
+  /* 🔹 Layout Container */
+  .layout-content-container {
+    max-width: 1600px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  /* Profile Header */
+  .profile-headers {
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+  }
+  
+  .profile-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .profile-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .profile-image {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .profile-name {
+    font-size: 22px;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .profile-role {
+    font-size: 16px;
+    color: #6b7280;
+    margin: 0;
+  }
+  
+  /* Edit Button */
+  .edit-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0.6rem 1rem;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+  }
+  .edit-btn:hover {
+    background-color: #1d4ed8;
+  }
+  
+  /* Info Cards */
+  .info-grid-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  @media (min-width: 768px) {
+    .info-grid-wrapper {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  .info-card {
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+  }
+  
+  .info-card h2 {
+    margin-bottom: 1rem;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .info-grid {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.5rem 1rem;
+    font-size: 14px;
+  }
+  
+  .label {
+    color: #6b7280;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  
+  .value {
+    color: #1f2937;
+    font-weight: 500;
+  }
+
+  /* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(31, 41, 55, 0.7); /* dark overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #ffffff;
+  padding: 2rem;
+  padding-top:1rem ;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+/* Form */
+.edit-form .form-row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.edit-form .form-row label {
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.edit-form .form-row input {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  background-color: #f9fafb;
+}
+
+/* Buttons */
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.cancel-btn {
+  background-color: #e5e7eb;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.save-btn {
+  background-color: #1173d4;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.save-btn:hover {
+  background-color: #2563eb;
+}
+
+.cancel-btn:hover {
+  background-color: #d1d5db;
+}
